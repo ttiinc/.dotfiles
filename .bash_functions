@@ -98,6 +98,8 @@ function hostfetch {
     user="$(/bin/whoami)"
 
 /bin/cat <<EOF
+
+
     .XSISzozozSIS2S2SIoIS2o2ozSzSoc.
   7MMI1X17t7tXtCt7t7t7tXtCtXtXtC1t8MM,
  vM;                                IM.
