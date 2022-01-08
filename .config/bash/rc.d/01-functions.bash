@@ -46,3 +46,7 @@ function prompt_command_tiny() {
     PS1="\n┌[\u@\h]──[${workingdir}${git}]──[\@]\n└────╼ "
 
 }
+
+prompt_command_failsafe() {
+    PS1="[\u@\h \W]\$"
+}
