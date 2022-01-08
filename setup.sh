@@ -10,25 +10,52 @@
 backupdir=~/Backup.dotfiles.$$
 cdir=$(pwd)
 
-while :
-do
-    printf "\n Install .dotfiles?  >> "
+declare -a dotfiles=(
+    ".bash_logout"
+    ".bash_profile"
+    ".bashrc"
+    ".inputrc"
+    ".motd"
+    ".tmux.conf"
+    ".vimrc"
+    ".zshenv"
+    )
+
+Display_Warning() {
+    clear && cat ${cdir}/setup-warning.txt
+}
+
+Install_Dotfiles() {
+    mkdir -p ${backupdir}
+    for i in "${dotfiles[@]}"; do
+        if [ -f ~/${i} ]; then
+            printf "\n Moving ${i} to $backupdir"
+            mv ~/${i} $backupdir
+        fi
+        printf "\n Creating $i"
+        cp ${cdir}/${i} ~
+    done
+}
+
+Copy_Directories() {
+    printf "\n Installing directories and binaries to your home directory."
+    cp -r ${cdir}/.config ~
+    cp -r ${cdir}/.local ~
+    cp -r ${cdir}/.ssh ~
+    cp -r ${cdir}/.vim ~
+    cp -r ${cdir}/Templates ~
+}
+
+
+while true; do
+    Display_Warning
+    printf "\n\n Go ahead? (Yes|No) >> "
     read antwoord
     case $antwoord in
         [yY] | [yY][Ee][Ss] )
-            printf "\n Installing .dotfiles to your home directory."
-            printf "\n Your current .dotfiles will be moved to $backupdir"
-            mkdir $backupdir
-            declare -a files=( ".vimrc" ".bashrc" ".bash_profile" ".bash_logout" ".bash_functions" ".screenrc" ".tmuxrc" ".motd" "template.sh" "template.php" )
-            for i in "${files[@]}"
-            do
-                if [ -f ~/$i ]; then
-                    printf "\n Moving $i to $backupdir"
-                    mv ~/$i $backupdir
-                fi
-                printf "\n Creating $i"
-                cp ${cdir}/${i} ~
-            done
+            Install_Dotfiles
+            Copy_Directories
+            printf "\n I'm done\n\n"
             break
             ;;
         [nN] | [n|N][O|o] )
@@ -36,30 +63,8 @@ do
             break
             ;;
         *)
-            printf "\n Wut?\n\n"
-            ;;
+            printf "  Wut?"
     esac
 done
 
-while :
-do
-    printf "\n\n Install ~/bin? >> "
-    read antwoord
-    case $antwoord in
-        [yY] | [yY][Ee][Ss] )
-            printf "\n Installing bin directory to your home directory."
-            mkdir -p ~/.local/bin
-            cp ${cdir}/.local/bin/* ~/.local/bin
-            break
-            ;;
-        [nN] | [n|N][O|o] )
-            printf "\n Oh Boy, you should reconsider your decision."
-            break
-            ;;
-        *)
-            printf "\n Wut?\n\n"
-            ;;
-    esac
-done
-printf "\n\n I'm done\n\n"
 exit 0
