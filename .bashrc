@@ -18,7 +18,7 @@ umask 002
 BASH_DIRECTORY=$HOME/.config/bash
 
 
-for file in $BASH_DIRECTORY/rc.d/*.sh; do
+for file in $BASH_DIRECTORY/rc.d/*.bash; do
     source $file
 done
 
