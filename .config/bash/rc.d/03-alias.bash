@@ -16,6 +16,10 @@ else
     alias ll='LC_ALL=C ls --color=auto --group-directories-first -lah'
 fi
 
+if command -v vim &> /dev/null; then
+    alias vi='vim'
+fi
+
 alias grep='grep -i --color=auto'
 alias s='su - root'
 alias cp='cp -ir'

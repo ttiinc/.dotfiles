@@ -10,14 +10,28 @@
 case $(/bin/ps -o comm= -p $PPID) in
     sshd)
         case $TERM in
-            xterm|xterm*|st|st-256color|tmux|tmux-256color)
-            export PROMPT_COMMAND=prompt_command_fancy
+            xterm|xterm*)
+                export PROMPT_COMMAND=prompt_command_tiny
+                ;;
+            st|st-256color|tmux|tmux-256color)
+                export PROMPT_COMMAND=prompt_command_fancy
+                ;;
         esac
-    ;;
+        ;;
+    su)
+        case $TERM in
+            xterm|xterm*)
+                export PROMPT_COMMAND=prompt_command_tiny
+                ;;
+            st|st-256color|tmux|tmux-256color)
+                export PROMPT_COMMAND=prompt_command_fancy
+                ;;
+        esac
+        ;;
     login)
         export PROMPT_COMMAND=prompt_command_tiny
-    ;;
+        ;;
     *)
         export PROMPT_COMMAND=prompt_command_failsafe
-    ;;
+        ;;
 esac
