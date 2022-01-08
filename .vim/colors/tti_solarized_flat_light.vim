@@ -1,10 +1,10 @@
-" 'solarized_flat_light.vim' -- Vim color scheme.
+" 'tti_solarized_flat_light.vim' -- Vim color scheme.
 
 if exists('syntax_on')
   syntax reset
 endif
 
-let colors_name = 'wiewaldi'
+let colors_name = 'tti_solarized_flat_light.vim'
 hi Normal                                  cterm=NONE  ctermfg=11  ctermbg=15  guifg=#657b83  guibg=#fdf6e3  gui=NONE
 set background=light
 hi ColorColumn                             cterm=NONE  ctermbg=254  guibg=#eee8d5  gui=NONE
