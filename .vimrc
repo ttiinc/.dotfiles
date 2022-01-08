@@ -6,7 +6,7 @@
 " +-------------------------------------------------------------------------+
 "
 "======== Color Theme =========================================================
-color wiewaldi
+color tti_solarized_flat_light.vim
 
 "======== Default Settings ====================================================
 setlocal cm=blowfish2                       " Sets encryption method to blowfish2
