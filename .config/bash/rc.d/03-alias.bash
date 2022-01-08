@@ -23,5 +23,3 @@ alias rm='rm -rf'
 alias mkdir='mkdir -p'
 alias ..='cd ..'
 alias ...='cd ../..'
-
-exit 0
