@@ -14,6 +14,7 @@ declare -a dotfiles=(
     ".bash_logout"
     ".bash_profile"
     ".bashrc"
+    ".gitconfig"
     ".inputrc"
     ".motd"
     ".tmux.conf"
