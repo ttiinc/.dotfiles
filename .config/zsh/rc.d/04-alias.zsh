@@ -8,7 +8,7 @@
 # |                                                                         |
 # +-------------------------------------------------------------------------+
 
-if command -v exa &> /dev/null; then
+if ! type "exa" &> /dev/null; then
     alias l='exa -lghm --icons --group-directories-first --git'
     alias ll='exa -laghm --icons --group-directories-first --git'
 else
@@ -16,7 +16,7 @@ else
     alias ll='LC_ALL=C ls --color=auto --group-directories-first -lah'
 fi
 
-if command -v vim &> /dev/null; then
+if ! type "vim" &> /dev/null; then
     alias vi='vim'
 fi
 
