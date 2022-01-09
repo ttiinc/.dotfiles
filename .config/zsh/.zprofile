@@ -14,4 +14,4 @@
 #    cat ~/.motd
 # fi
 
-~/.local/bin/tmux-start.sh
+# ~/.local/bin/tmux-start.sh
