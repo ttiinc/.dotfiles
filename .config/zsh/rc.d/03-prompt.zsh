@@ -29,8 +29,8 @@ case $(/bin/ps -o comm= -p $PPID) in
     sshd)
         case $TERM in
             xterm|xterm*)
-                PROMPT='[%n@%m]%~%# '    # default prompt¬
-                RPROMPT=' %~'     # prompt for right side of screen¬
+                PROMPT='[%n@%m]%~%# '
+                RPROMPT=' %T'
                 ;;
             st|st-256color|tmux|tmux-256color)
                 precmd() {
@@ -71,8 +71,8 @@ case $(/bin/ps -o comm= -p $PPID) in
     su)
         case $TERM in
             xterm|xterm*)
-                PROMPT='[%n@%m]%~%# '    # default prompt¬
-                RPROMPT=' %~'     # prompt for right side of screen¬
+                PROMPT='[%n@%m]%~%# '
+                RPROMPT=' %T'
                 ;;
             st|st-256color|tmux|tmux-256color)
                 precmd() {
@@ -111,11 +111,11 @@ case $(/bin/ps -o comm= -p $PPID) in
         esac
         ;;
     login)
-        PROMPT='[%n@%m]%~%# '    # default prompt¬
-        RPROMPT=' %~'     # prompt for right side of screen¬
+        PROMPT='[%n@%m]%~%# '
+        RPROMPT=' %T'
         ;;
     *)
-        PROMPT='[%n@%m]%~%# '    # default prompt¬
-        RPROMPT=' %~'     # prompt for right side of screen¬
+        PROMPT='[%n@%m]%~%# '
+        RPROMPT=' %T'
         ;;
 esac
