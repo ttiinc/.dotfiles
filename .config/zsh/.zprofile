@@ -15,3 +15,5 @@
 # fi
 
 # ~/.local/bin/tmux-start.sh
+
+~/.local/bin/hostfetch
