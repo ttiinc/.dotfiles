@@ -1,0 +1,21 @@
++------------------------------------------------------------------------------+
+| Copyright © 2019 TTI, Inc.                                                   |
+|                  euis.network(at)de.ttiinc.com                               |
++------------------------------------------------------------------------------+
+|      .                                                                       |
+|    .o8    .                                                                  |
+|  .o888oo.o8  o8o                                                             |
+|    888.o888oo`"'            _     _    __ _ _                                |
+|    888  888 oooo         __| |___| |_ / _(_) |___ ___                        |
+|    888 .888 `888       _/ _` / _ \  _|  _| | / -_|_-<                        |
+|    "888"888 .888      (_)__,_\___/\__|_| |_|_\___/__/                        |
+|         "888"888                                                             |
+|             o888o                                                            |
+|                                                                              |
+|   This setup script will put .dotfiles into your home directory.             |
+|   Don't be scared to loose any of your personal dotfiles.                    |
+|   Every file that gets replaced will be backed up.                           |
+|                                                                              |
+|   However, since this script will copy binaries to ~/.local it may           |
+|   happen to replace some of yours. You have been warned.                     |
++------------------------------------------------------------------------------+
