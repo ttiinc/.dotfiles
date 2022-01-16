@@ -43,7 +43,7 @@ declare -a dotfiles=(
     ".zshenv"
     )
 
-declare -a directorie=(
+declare -a directories=(
     "/.config"
     "/.local"
     "/.ssh"
@@ -169,7 +169,7 @@ if [[ "${proceed}" = "no" ]]; then
     exit 1
 fi
 
-echo_Title "Copying .dotfiles"
+echo_title "Copying .dotfiles"
 create_BackupDirectory
 install_Dotfiles
 copy_Directories
