@@ -7,10 +7,6 @@
 # |                  euis.network(at)de.ttiinc.com                          |
 # +-------------------------------------------------------------------------+
 
-
-
-echo ".bashrc 1"
-
 # If not running interactively, don't do anything
 [[ $- != *i* ]] && return
 
@@ -25,5 +21,3 @@ done
 if [ -f ~/.motd ]; then
     /bin/cat ~/.motd
 fi
-
-echo ".bashrc 1"
